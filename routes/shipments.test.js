@@ -47,6 +47,8 @@ describe("POST /with-validation", function () {
         addr: "100 Test St",
         zip: "12345-6789",
       });
+      // TODO: ^ consider breaking more things for test (like empty JSON body)
+      // test for missing required pieces
 
     expect(resp.statusCode).toEqual(400);
   });
