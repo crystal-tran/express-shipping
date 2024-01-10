@@ -14,14 +14,16 @@ let {
 test("shipProduct", async function () {
   fetchMock.post(SHIPIT_SHIP_URL, {
     body: {
-      itemId: 1000,
-      name: "Test",
-      addr: "123 Test",
-      zip: "1234",
-      shipId: 700
-     },
+      receipt: {
+          itemId: 1000,
+          name: "Test",
+          addr: "123 Test",
+          zip: "1234",
+          shipId: 700
+         },
+      },
     status: 200
-  });
+    });
 
   // const order = {
   //   productId: 1000,
@@ -41,5 +43,5 @@ test("shipProduct", async function () {
 
   console.log('res:', res);
 
-  expect(res.body.receipt.shipId).toEqual({ shipped: 700});
+  expect(res).toEqual(700);
 });
