@@ -1,0 +1,19 @@
+{
+    "$schema":"http://json-schema.org/draft-07/schema#",
+    "$id": "http://crystal.and.carl.com/order.schema.json",
+    "title": "Express Shipping",
+    "description": "Order for ShipIt",
+    "type": "object",
+    "properties": {
+        "itemId": {
+            "type": "integer",
+            "minimum": 1000
+        },
+        "name":{
+            "type": "string",
+            "minimum": 2
+        },
+        "addr":{"type": "string"},
+        "zip":{"type": "string"}
+    }
+}
