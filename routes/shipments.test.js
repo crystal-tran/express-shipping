@@ -23,3 +23,6 @@ describe("POST /", function () {
     expect(resp.statusCode).toEqual(400);
   });
 });
+
+describe("")
+//TODO: write tests to demonstrate error JSON is returned to user of your API
