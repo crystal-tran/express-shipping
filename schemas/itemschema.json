@@ -5,7 +5,7 @@
     "description": "Order for ShipIt",
     "type": "object",
     "properties": {
-        "itemId": {
+        "productId": {
             "type": "integer",
             "minimum": 1000
         },
@@ -15,5 +15,12 @@
         },
         "addr":{"type": "string"},
         "zip":{"type": "string"}
-    }
+    },
+    "additionalProperties": false,
+    "required": [
+      "productId",
+      "name",
+      "addr",
+      "zip"
+    ]
 }

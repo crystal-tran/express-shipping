@@ -24,5 +24,33 @@ describe("POST /", function () {
   });
 });
 
-describe("")
+describe("POST /with-validation", function () {
+  test("validates good JSON data/ w/ jsonschema", async function () {
+    const resp = await request(app)
+      .post("/shipments")
+      .send({
+        productId: 1000,
+        name: "Test Tester",
+        addr: "100 Test St",
+        zip: "12345-6789",
+      });
+
+    expect(resp.body).toEqual({ shipped: expect.any(Number) })
+  });
+
+  test("valides bad JSON data/ w/ jsonschema", async function () {
+    const resp = await request(app)
+      .post("/shipments")
+      .send({
+        productId: 1,
+        name: "Test Tester",
+        addr: "100 Test St",
+        zip: "12345-6789",
+      });
+
+    expect(resp.statusCode).toEqual(400);
+  });
+
+
+})
 //TODO: write tests to demonstrate error JSON is returned to user of your API
